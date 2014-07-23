@@ -12,10 +12,10 @@ func (r *Relation) GraphViz() string {
 	return RenderTemplate(graphTemplate, r)
 }
 
-func NewRelation(leftID string, rightID string) *Relation {
+func NewRelation(left *Node, right *Node) *Relation {
 	r := Relation{
-		LeftID:     leftID,
-		RightID:    rightID,
+		LeftID:     left.ID,
+		RightID:    right.ID,
 		Properties: make(Properties)}
 
 	return &r

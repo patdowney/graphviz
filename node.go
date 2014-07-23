@@ -24,7 +24,7 @@ func (n *Node) GraphViz() string {
 }
 
 func (n *Node) AddRelation(right *Node) *Relation {
-	r := NewRelation(n.ID, right.ID)
+	r := NewRelation(n, right)
 	n.Relations = append(n.Relations, r)
 	return r
 }
