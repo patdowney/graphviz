@@ -10,7 +10,7 @@ type Graph interface {
 	AddAttribute(*Attr)
 	AddNode(GraphVizNode)
 	AddSubGraph(GraphVizGraph)
-	AddRelation(*Relation)
+	AddRelation(GraphVizRelation)
 	GraphViz() string
 }
 
@@ -39,8 +39,8 @@ func (g *GraphBase) AddSubGraph(sub GraphVizGraph) {
 	g.SubGraphs = append(g.SubGraphs, sub.Graph())
 }
 
-func (g *GraphBase) AddRelation(r *Relation) {
-	g.Relations = append(g.Relations, r)
+func (g *GraphBase) AddRelation(r GraphVizRelation) {
+	g.Relations = append(g.Relations, r.Relation())
 }
 
 func (g *GraphBase) AddNode(gvn GraphVizNode) {
